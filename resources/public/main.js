@@ -22,8 +22,8 @@ function get_ticket_permalink_path (code, ticket_id) {
   return get_ticket_path(code, ticket_id) + '/permalink'
 }
 
-function copy_estimation_link (code, ticket_id) {
-  var url = document.location.origin + get_ticket_estimation_path(code, ticket_id)
+function copy_estimation_link () {
+  var url = document.location.origin + get_ticket_estimation_path(_unrefined.refinementCode, _unrefined.ticketId)
   navigator.clipboard.writeText(url)
 }
 
@@ -206,3 +206,12 @@ const getPermalink = (code, ticketId) => {
   copy_permalink(code, ticketId)
   document.getElementById('permalink').innerText = "Link copied to the clipboard"
 }
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+const copyEstimationPageLinkTrigger = document.getElementById('copyEstimationPageLink')
+if (copyEstimationPageLinkTrigger) {
+  copyEstimationPageLinkTrigger.addEventListener('click', copy_estimation_link)
+}
+

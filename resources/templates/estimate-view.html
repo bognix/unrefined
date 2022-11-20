@@ -8,6 +8,7 @@
     <div class="row">
       <div class="col">
         <p>
+          <i class="fa-solid fa-link pe-auto" role="button" data-bs-toggle="tooltip" data-bs-title="Copy link to estimation page" id="copyEstimationPageLink"></i>
           We are estimating ticket
           <a href="{{ticket.link-to-original}}">{{ticket.id}}</a>
         </p>
@@ -35,9 +36,6 @@
         <h4 class="mb-4">
           Total story points <span id="total-story-points">0</span>
         </h4>
-        <button class="btn btn-primary" onclick="copy_estimation_link('{{refinement.code}}', '{{ticket.id}}'); return false;">
-          Copy link to estimation page
-        </button>
       </div>
     </div>
     <div class="row">
