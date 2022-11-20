@@ -19,13 +19,9 @@
               type="text"
               id="name"
               name="name"
-              {%
-              if
-              name
-              %}value="{{name}}"
-              {%
-              endif
-              %}
+              required
+              {% if name %}value="{{name}}"
+              {% endif %}
               placeholder="Insert your name here"
             />
           </div>
